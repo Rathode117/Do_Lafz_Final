@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Log in</title>
+	<link rel="stylesheet" type="text/css" href="signpage.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="icon" href="../pen.png" type="image/icon type">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+<body style="background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);">
+
+
+    <section class="Navigation">
+        <ul class="ListContainer">
+            <li class="NavList" ><a style="text-decoration: none;" href="/"><h3 class="ListItems">Home</h3></a></li>
+            <li class="NavList"><a style="text-decoration: none;" href="/poem"><h3 class="ListItems" >All Poems</h3></a></li>
+            <li class="NavList"><a style="text-decoration: none;" href="/submit"><h3 class="ListItems" >Submit</h3></a></li>
+            <%if(user) {%>
+                <li class="NavList" ><a style="text-decoration: none;" href="/profile"><h3 class="ListItems" style="background-color: aliceblue; border-radius: 50%; text-decoration: none; "><%=user.name[0]%></h3></a></li>
+                <li class="NavList"><a style="text-decoration: none;" href="/logout"><h3 class="ListItems" >Logout</h3></a></li>
+                <%} else {%>
+                <li class="NavList"><a style="text-decoration: none;" href="/signup"><h3 class="ListItems" >SignUp</h3></a></li>
+                <li class="NavList"><a style="text-decoration: none;" href="/login"><h3 class="ListItems Active" >Login</h3></a></li>
+        
+                <%}%>
+            
+        </ul>
+    </section>
+    
+
+    
+
+
+<div class="abody">
+    <div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				<form>
+					<label for="chk" aria-hidden="true">Login</label>
+					<input type="email" name="email" placeholder="Email">
+                    <div  style="text-align: center;" class="emailerror"></div>
+					<input type="password" name="password" placeholder="Password">
+                    <div  style="text-align: center;" class="passworderror"></div>
+					<button>Login</button>
+                    <div style="text-align: center;" class="notverified"></div>
+
+				</form>
+			</div>
+	</div>
+
+</div>
+
+	
+
+
+
+
+
+
+    <script>
+        const form = document.querySelector('form');
+        const emailerror = document.querySelector('.emailerror');
+        const passworderror = document.querySelector('.passworderror');
+        const notverified = document.querySelector('.notverified');
+        
+        form.addEventListener('submit', async(e)=>{
+            e.preventDefault();
+            emailerror.textContent='';
+            passworderror.textContent='';
+            const email = form.email.value;
+            const password = form.password.value;
+
+            try{
+                const res = await fetch('/login', {
+                    method: 'POST',
+                    body: JSON.stringify({email,password}),
+                    headers:{'Content-Type': 'application/json'}
+
+                });
+                const data = await res.json();
+                if(data.errors){
+                    emailerror.textContent=data.errors.email;
+                    passworderror.textContent=data.errors.password;
+                    notverified.textContent = data.errors.verified;
+                }
+                if(data.user){
+                    location.assign('/');
+                }
+                
+            }
+            catch(err){
+                console.log(err);
+            }
+
+
+
+
+
+
+        });
+
+
+
+
+    </script>
+
+    
+</body>
+</html>

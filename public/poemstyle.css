@@ -1,0 +1,82 @@
+.paper{
+    background-color: rgb(253, 214, 214);
+    width: 70vw;
+    border: thick rgb(255, 254, 254) double;
+    padding: 6%;
+    font-size: 1.5rem;
+    white-space: pre-line;
+    overflow-wrap: break-word;
+    text-align: center;
+  
+    
+
+}
+h2{
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+}
+
+.PoemBackground{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.horizontalrule{
+    border: rgb(236, 0, 0) solid 2px;
+}
+
+
+.title{
+    text-align: center;
+    margin-top: 10vh;
+}
+.author{
+    font-family: fangsong;
+}
+.poemname{
+    font-family: cursive;
+}
+@media (max-width: 900px){
+    .paper{
+        background-color: rgb(253, 214, 214);
+        width: 100vw;
+        height: fit-content;
+        margin-bottom: 10vh;
+        margin-top: 10vh;
+        border: thick rgb(255, 254, 254) double;
+        padding: 5%;
+        font-size: 1.65rem;
+        white-space: pre-line;
+        overflow-wrap: break-word;
+        display: flex;
+        justify-content: center;
+        
+    
+    }
+
+
+}
+
+@media (max-width: 600px){
+    .paper{
+        background-color: rgb(253, 214, 214);
+        width: 100vw;
+        height: fit-content;
+        margin-bottom: 10vh;
+        margin-top: 10vh;
+        border: thick rgb(255, 254, 254) double;
+        padding: 3%;
+        font-size: 1rem;
+        white-space: pre-line;
+        overflow-wrap: break-word;
+        display: flex;
+        justify-content: center;
+        
+    
+    }
+
+
+}

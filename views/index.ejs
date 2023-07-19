@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do Lafz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slidestyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="icon" href="../pen.png" type="image/icon type">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body    class="bodyy">
+  <!-- nav partial -->
+  <%-include('./partials/nav.ejs')%>
+
+  <div style="height: 7vh; font-family: cursive; background-color: blue; color: aliceblue; margin: 0; text-align: center; border: solid 2px rgb(250, 186, 186);"><h1>Do Lafz</h1></div>
+
+    <section class="Slides zero" style="border-left: 4px solid rgb(250, 186, 186); border-right: 4px solid rgb(250, 186, 186);">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner" >
+              <div class="carousel-item active" style="padding: 0; margin: 0;">
+                <div style=" min-height: 35vh; text-align: center;  background-image: linear-gradient(
+                  to bottom,
+                  rgba(0, 255, 60, 0.5),
+                  rgba(0, 0, 255, 0.5)
+                );" class="d-block w-100 caraouselcontent" ><h2 class="caraou" ><p id="myquotes">  </p> <p id="author" style="font-size: large; color: aliceblue;"></p> </h2></div>
+              </div>
+              <div class="carousel-item">
+                <div style=" min-height: 35vh; text-align: center;  background-image: linear-gradient(
+                  to bottom,
+                  rgba(255, 0, 0, 0.5),
+                  rgba(0, 0, 255, 0.5)
+                );" class="d-block w-100 caraouselcontent" ><h2 class="caraou" > <p id="riddle">  </p> <p id="answer" style="display: none; color: aliceblue; font-size: large;" ></p> <button id="reveal" class="btn btn-dark" >Answer</button> </h2></div>
+              </div>
+              <div class="carousel-item">
+                <div style=" min-height: 35vh; text-align: center;  background-image: linear-gradient(
+                  to bottom,
+                  rgba(217, 255, 0, 0.5),
+                  rgba(0, 0, 255, 0.5)
+                );" class="d-block w-100 caraouselcontent" ><h2 class="caraou"><p id="joke"></p><p id="jokepunch"></p></h2></div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </section>
+    <div style="height: 5vh; background-color: blue; color: aliceblue; border: solid 2px rgb(250, 186, 186); text-align: center;"><h5 class="belowcaraousel">A place where you can share all your poetic creations</h5></div>
+    <br>
+    <br>
+    
+    <div class="categoriesandsearch" >
+      <h1 class="fcate">Categories :</h1>
+      <form class="searchb" action="/searchresult" method="post">
+        <input type="text" name="search" id="searchbox" placeholder="Search">
+        <button class="btn btn-dark searchbtn"><h5 class="contentinbutton" >Find</h5> </button>
+      </form>
+    </div>
+    
+   <section class="MainBody">
+    <div class="MyCard">
+        <div class="card Cardd">
+            <img class="CardImage" src="patriotic.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Patriotic</h5>
+              <p class="card-text">Patriotic poetry often talks about self sacrifice for the good of the country.</p>
+              <a href="/poem_patriotic" class="btn btn-dark">Explore</a>
+            </div>
+          </div>
+          <div class="card Cardd">
+            <img class="CardImage" src="love.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Romantic</h5>
+              <p class="card-text">Romantic poetry is the poetry of sentiments, emotions and imagination.</p>
+              <a href="/poem_romantic" class="btn btn-dark">Explore</a>
+            </div>
+          </div>
+          <div class="card Cardd">
+            <img class="CardImage" src="funny.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Funny</h5>
+              <p class="card-text">Funny poetry can exist in any form or measure of poetry, granted that the topic or tone of the poem is humorous.</p>
+              <a href="/poem_funny" class="btn btn-dark">Explore</a>
+            </div>
+          </div>
+          <div class="card Cardd">
+            <img class="CardImage" src="mythology.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Mythology</h5>
+              <p class="card-text">It is a poetic story that expresses a world view and embodies the ideals, beliefs and dreams of a society.</p>
+              <a href="/poem_mythology" class="btn btn-dark">Explore</a>
+            </div>
+          </div>
+          
+          
+          
+          <!-- NEW CARD HERE -->
+    </div>
+    <div class="SideBar">
+        <div class="Featured">
+            <div class="SideBarDataHead">
+                <h1 style="text-align: center; font-family: cursive;">New Uploads</h1>
+            </div>
+            <div class="SideBarData">
+              <ul class="newpoems">
+                <%let k = 3%>
+                <%poems.forEach(poems => { %>
+                  <%if (k>0) { %>
+                    <li class="sidebardatali">
+                      <% if(poems.category=='romantic'){%>
+                        <a class="new_poems_sidebar" style="text-decoration: none;" href="/poem_romantic"><h3><%=poems.title%></h3></a>
+                      <%}%>
+                      <% if(poems.category=='patriotic'){%>
+                        <a class="new_poems_sidebar" style="text-decoration: none;" href="/poem_patriotic"><h3><%=poems.title%></h3></a>
+                      <%}%>
+                      <% if(poems.category=='mythology'){%>
+                        <a class="new_poems_sidebar" style="text-decoration: none;" href="/poem_mythology"><h4><%=poems.title%></h4></a>
+                      <%}%>
+                      <% if(poems.category=='funny'){%>
+                        <a class="new_poems_sidebar" style="text-decoration: none;" href="/poem_funny"><h4><%=poems.title%></h4></a>
+                      <%}%>
+                    
+
+                    </li>
+                    <%k=k-1%>
+                    <%}%>
+
+                <%})%>
+
+
+              </ul>
+          </div>
+        </div>
+        <div class="Quotes">
+            <div class="SideBarDataHead">
+                <h1 style="text-align: center;  font-family: cursive;">Notice</h1>
+            </div>
+            <div class="SideBarData">
+              <ul class="newpoems">
+                <li><h5>All the new uploads will be promoted in the new poem card</h5></li>
+                <li><h5>Like & Comment feature will be added soon</h5></li>
+               
+
+              </ul>
+          </div>
+           
+        </div>
+    </div>
+   </section>
+
+
+   <!-- <section >
+        <div class="AboutUs" id="AboutUs">
+            <H3 style="text-align: center; color: azure; margin: 0; padding: 1vh;">About</H3>
+        </div>
+        <div class="AboutUsContent">
+          <div class="LeftClouds">
+            <div class="Clouds">
+            <h3>Upload your own creations</h3>
+            </div>
+            <div class="Clouds">
+              <h3>Read other's Creations</h3>
+            </div>
+
+          </div>
+         
+          <img class="ImgAboutUs" src="5a01942e7ca233f48ba62734.png" alt="">
+          <div class="RightClouds">
+            <div class="Clouds">
+              <h3></h3>
+            </div>
+            <div class="Clouds">
+              <h3>ABC</h3>
+            </div></div>
+            <p class="AboutUsMobile">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae earum assumenda, fuga aspernatur, incidunt laborum labore quod hic, non ea cumque animi ut officia vero nobis eligendi aut eius iure dicta alias dolor. Commodi obcaecati odit aperiam iste aut et, minima odio ducimus ab dolore ipsum omnis facilis esse atque, assumenda eum, veniam voluptate! Magni consectetur laboriosam rerum accusamus earum doloribus voluptate, ab, exercitationem tempora et eos enim facilis sapiente minus eaque magnam. A, accusamus? Quia sequi ducimus, repudiandae obcaecati soluta, beatae fuga facilis corporis aspernatur at modi explicabo? Aliquid, eveniet veniam mollitia nesciunt impedit commodi dignissimos sequi quo!
+            </p>
+
+      
+           
+   </section> -->
+   <%-include('./partials/footer.ejs')%>
+    
+
+
+
+
+
+
+   
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+
+
+<script>
+
+  const quotecontent = document.getElementById('myquotes');
+  const quoteauthor = document.getElementById('author');
+  const riddle = document.getElementById('riddle');
+  const answer = document.getElementById('answer');
+  const answerbutton = document.getElementById('reveal');
+  const jokes = document.getElementById('joke');
+  const jokespunch = document.getElementById('jokepunch');
+
+
+  //quote api
+  const api_url = "https://api.quotable.io/random";
+  async function getquote(url){
+    const response = await fetch(url);
+    var data = await response.json();
+    quotecontent.innerHTML =data.content;
+    quoteauthor.innerHTML= `-${data.author}`;
+  }
+  getquote(api_url);
+
+
+  //Riddle API
+  const riddle_url = "https://riddles-api.vercel.app/random";
+  async function getriddle(riddle_url){
+    const response = await fetch(riddle_url);
+    var riddledata = await response.json();
+    riddle.innerHTML =riddledata.riddle;
+    answer.innerHTML= `-${riddledata.answer}`;
+  }
+  getriddle(riddle_url);
+
+  answerbutton.addEventListener('click',function() {
+  document.getElementById('answer').style.display = '';
+  answerbutton.style.display = 'none';
+})
+  
+
+//joke API
+const joke_url = "https://official-joke-api.appspot.com/random_joke";
+  async function getjoke(joke_url){
+    const response = await fetch(joke_url);
+    var jokedata = await response.json();
+    console.log(jokedata);
+    jokes.innerHTML =jokedata.setup;
+    jokespunch.innerHTML = jokedata.punchline;
+  }
+  getjoke(joke_url);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>

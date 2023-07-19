@@ -1,0 +1,91 @@
+<%-include('./partials/headerforpoem')%>
+
+<body style="background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);">
+    <%-include('./partials/nav')%>  
+
+
+
+    
+  
+
+
+
+
+    <section class="PoemBackground">
+        <div class="Book">
+
+            <!-- loop -->
+            <%var flag =0;%>
+            <% if(poems.length>0) { %>
+                <%poems.forEach(poems => { %>
+                    <%let ptitle = poems.title.toLowerCase();%>
+                    <% if(ptitle.includes(ser)==true) {%>
+                        <%  flag=1%>
+                       
+                        
+                        <div class="title">
+                            <h2 class="poemname" style="text-decoration: underline;"><%=poems.title%></h2>
+                            <div class="author">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<h4>-<%=poems.author%></h4></div>
+                            <div class="author"><p> Uploaded by - <%=poems.poememail%><p></div>
+                                
+                       
+                        
+                                <p class="paper">
+                                    <%=poems.poem%>
+                            </p>
+               
+                        </div>
+
+                <hr class="horizontalrule">
+                <%}%>
+                    <%})%> 
+                  
+            <%}%> 
+
+            <%if (flag==0){%>
+                <h3>No Result Found</h3>
+            <%}%>
+        
+        <!-- loop-end -->
+
+        </div>
+
+
+        
+      </section>
+      
+      <br>
+      <br>
+      
+      <br><br>
+
+
+    
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+   
+
+
+
+    <%-include('./partials/footer')%>
+</body>

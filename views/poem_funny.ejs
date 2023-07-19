@@ -1,0 +1,55 @@
+<%-include('./partials/headerforpoem')%>
+
+<body class="bodyy">
+    <%-include('./partials/nav.ejs')%>
+    <h2 style="text-align: center; margin-top: 4vh;">Funny Poems</h2>
+      <section class="PoemBackground">
+        <div class="Book">
+
+            <!-- loop -->
+            <% if(poems.length>0) { %>
+                <%poems.forEach(poems => { %>
+                    <% if(poems.category=="funny") {%>
+                       
+                        
+                        <div class="title">
+                            <h2 class="poemname" style="text-decoration: underline;"><%=poems.title%></h2>
+                            <div class="author">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<h4>-<%=poems.author%></h4></div>
+                            <div class="author"><p> Uploaded by - <%=poems.poememail%><p></div>
+                                
+                       
+                        
+                                <p class="paper">
+                                    <%=poems.poem%>
+                            </p>
+               
+                        </div>
+                <hr class="horizontalrule">
+                <%}%>
+                    <%})%> 
+                  
+            <%}%> 
+            
+        
+        <!-- loop-end -->
+
+        </div>
+
+
+        
+      </section>
+      
+      <br>
+      <br>
+      
+      <br><br>
+
+
+    
+
+
+    </section>
+    <%-include('./partials/footer.ejs')%>
+    
+</body>
+</html>

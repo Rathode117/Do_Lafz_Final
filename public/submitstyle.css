@@ -1,0 +1,37 @@
+body{
+    
+        background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+        
+}
+.SubmitBody{
+    display: flex;
+    justify-content: center;
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+}
+#title{
+    display: block;
+}
+#author{
+    display: block;
+}
+#poem{
+    display: block;
+}
+textarea{
+    max-width: 80vw;
+}
+.form1{
+    border: 2px double green;
+    padding: 5vw;
+    padding-top: 3vh;
+    background-color: pink;
+}
+.nameofform{
+    display: flex;
+    align-self: center;
+    justify-self: center;
+}
+
+
+/* CSS for Signup */
