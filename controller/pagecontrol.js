@@ -65,7 +65,7 @@ let transporter =  nodemailer.createTransport({
 });
 
 const sendVerificationEmail = (user) =>{        
-    const currentUrl = "https://do-lafz.cyclic.app";
+    const currentUrl = "https://long-cyan-wildebeest-boot.cyclic.app";
     const uniqueString = uuidv4()+user._id;
 
 
